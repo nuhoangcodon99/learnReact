@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React JS</title>
+        <!-- them thu vien cua react => thu vien development -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+<body>
+    <!-- recact.creatElement => tra ve doi tuong la React Element, React Element la thanh phan nho nhat khi lam viec voi React
+    document.createElment => tra ve doi tuong la DOM element , thanh phan nho nhat cua DOM la note
+    -->
+    <div id="root"></div>
+    <script type="text/babel"> 
+       
+        // False, undefine or null => khong co render gi ca, nghia la khong in ra cai gi ca
+        // True thi in ra 
+        function App({title, content}) {
+            let firtsAcces = false
+            return (
+                <div>
+                     {content|| title}
+                </div>)
+        }
+
+        const container = document.querySelector("#root");
+        const root =  ReactDOM.createRoot(container);
+        root.render(<App />)
+ 
+    </script>
+
+</body>
+</html>

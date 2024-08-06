@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React JS</title>
+        <!-- them thu vien cua react => thu vien development -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel"> 
+
+        const container = document.getElementById('root');
+                
+        const data = [
+        {
+            "sentence": "Pierre lui parle.",
+            
+                "sujet": "Pierre",
+                "iobj": "lui",
+                "verbe": "parle"
+        },
+        {
+            "sentence": "J'en parle.",
+            
+                "sujet": "J'",
+                "iobj": "en",
+                "verbe": "parle"
+        },
+        {
+            "sentence": "Je te ressemble.",
+            
+                "sujet": "Je",
+                "iobj": "te",
+                "verbe": "ressemble"
+        },
+        {
+            "sentence": "J'y pense.",
+            
+                "sujet": "J'",
+                "iobj": "y",
+                "verbe": "pense"
+        },
+        {
+            "sentence": "Je m'en moque.",
+            
+                "sujet": "Je",
+                "iobj": "en",
+                "verbe": "moque"
+        },
+        {
+            "sentence": "Il s\u2019en souvient.",
+            
+                "sujet": "Il",
+                "iobj": "en",
+                "verbe": "souvient"
+        },
+        {
+            "sentence": "Je t\u2019ai dit que c\u2019\u00e9tait urgent.",
+            
+                "sujet": "Je",
+                "iobj": "t\u2019",
+                "verbe": "dit"
+        }
+        ]
+
+
+        function AnalyseSentence({
+        sentence,
+        sujet,
+        verbe,
+        complement
+        }) {
+            return (
+            <div className="item">
+                <h3 title="title-sentence">{sentence}</h3>
+                <p className = "sujet">{sujet}</p>
+                <p className="verbe">{verbe}</p>
+                <p className="complement">{complement}</p>
+            </div>)
+        }
+
+        const app = (
+        <div id="wrapper">
+            {data.map(dataSentence => (
+                <AnalyseSentence 
+                sentence = {dataSentence.sentence}
+                sujet = {dataSentence.sujet}
+                verbe = {dataSentence.verbe}
+                complement = {dataSentence.iobj}
+                />
+                ))}
+            </div>
+        )
+
+        const root = ReactDOM.createRoot(container);
+        root.render(app);
+        
+</script>
+</body>
+</html>

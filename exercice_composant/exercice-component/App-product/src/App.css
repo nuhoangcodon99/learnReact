@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+.cars{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 22%;
+  margin-top: 5%;
+}
+.car {
+  border: 1px solid gray;
+  margin: 30px;
+  padding: 20px;
+  width: 30%;
+}
+.car img{
+  width: 100%;
+
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React JS</title>
+        <!-- them thu vien cua react => thu vien development -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+<body>
+    <!-- recact.creatElement => tra ve doi tuong la React Element, React Element la thanh phan nho nhat khi lam viec voi React
+    document.createElment => tra ve doi tuong la DOM element , thanh phan nho nhat cua DOM la note
+    -->
+    <div id="root"></div>
+    <script type="text/babel"> 
+        // 
+        const container = document.getElementById('root');
+
+        const Form = {
+            Input () {
+                return <input />
+            },
+            Checkbox() {
+                return <input type="checkbox" />
+            }
+        }
+
+        function App() {
+            return (
+                <div id="wrapper">
+                    <Form.input />
+                </div>
+            )
+        }
+            
+        const root = ReactDOM.createRoot(container);
+        root.render(<App />);
+        //const postItem = React.createElement(
+        //    "div",
+        //    {
+         //       className:"post-item",
+         //   }, 
+         //   React.createElement('h1',{title:"Hello", className:"heading"}, "Hello guys!"),
+         //   React.createElement('h2', {title: "Hoc react tai F8"}, 'Hoc ReactJS'),
+         //   React.createElement('p', null, 'Hoc ReactJS tu co ban den nang cao.'),
+         //   React.createElement(
+          //      'ul',
+           //     {},
+           //     React.createElement('li', null, "Javascript"),
+           //     React.createElement('li',null,"ReactJS"),
+            //    )
+        //)
+
+        /*const courses = [
+        {
+            name: 'HTML, CSS'
+        },{
+            name: 'Responsive web design',
+        },
+        {
+            name: 'ReactJS'
+        }
+        ]
+        const ulElement = <ul>
+            {courses.map((course,index) =>
+                 <li key={index}>{course.name}</li>
+            )}
+        </ul>*/
+
+        // lam sao de render hai cai cung mot luc duoc, ma khong can phai the DIV => React.Fragement: sinh ra de om duoc nhieu element ben trong
+        
+        /*const jsxH1 = (
+            <React.Fragment>
+                <h1>Heading 1</h1>,
+                <h2>Heading 2</h2>
+            </React.Fragment>
+        )*/
+
+        /*function PostItem({
+            title,
+            description,
+            published
+        }) {
+            return (
+                // FOR DANS LABEL, IL FAUT CHANGER EN htmlFor
+                <div className="post-item">
+                    <label htmlFor = "email">Email</label>
+                    <input id= "email" />
+                    <h2 className = "post-title">{title}</h2>
+                    <p className = "post-desc">{description}</p>
+                    <p className = "post-pusished">{published}</p>
+                </div>
+            )
+        }
+
+       
+        const app = (
+            <div className="post-list">
+                <PostItem
+                    title = "C#"
+                    description = "Ban co kien thuc ngon ngu C#."   
+                    published = "Mot ngay truoc: 5h."
+                />
+                <PostItem
+                title = "JS"
+                description = "Ban co kien thuc ngon ngu JS"   
+                published = "Mot ngay truoc: 6h."
+            />
+            <PostItem
+            title = "React"
+            description = "Ban co kien thuc ngon ngu React"   
+            published = "Mot ngay truoc: 16h."
+        />
+            </div>
+        )
+        
+        // React @18
+
+        const root = ReactDOM.createRoot(container);
+        root.render(app);
+
+        //JSX => Javascript XML, De tao ra elemennt trong createElment, de reacteDOM render trong dom, phai co ELement. => kho trong viec tao ra website. Babel la thu vien JS, chuyen doi cu phap cua JS ES6, de ho tro trinh duyet JS. 
+*/
+
+     
+    </script>
+
+</body>
+</html>
